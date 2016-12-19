@@ -16,63 +16,25 @@ import {
   Button,
   Alert,
   Image,
-  Router,
-  Scene
 } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux'
 
-import PageOne from './PageOne';
-import PageTwo from './PageTwo';
+import Home from './Home';
+import Login from './login';
+import Forgot from './Forgot';
 
 export default class backdoor extends Component {
-  constructor() {
-    super();
-    this.state= {
-      username: '',
-      password: ''
-    }
-  }
   render() {
     // Notice how I changed the spacing. Personally, I think it makes it more readable
     return (
       <Router>
         <Scene key = "root">
-          <Scene key="pageOne" component={PageOne} title = "PageOne" initial={true} />
-          <Scene key="pageTwo" component={PageTwo} title = "PageTwo" />
+          <Scene key='login' component={Login} title="Login" initial = {true}>
+            <Scene key='home' component={Home} title="Home" />
+            <Scene key='forgot' component={Forgot} title="Help" />
+          </Scene>
         </Scene>
       </Router>
     );
   }
 }
-
-const onLoginPress = () => {
-  Alert.alert('you just entered my backdoor ;)');
-}
-
-const onHelpPress = () => {
-  Alert.alert('nothing to forget yet silly');
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  welcome: {
-    fontSize: 25,
-    textAlign: 'center',
-    marginTop: -10,
-    marginBottom: 50,
-    margin: 10,
-  },
-  textfield: {
-    height: 20,
-    backgroundColor: 'white',
-    marginTop: 1,
-    marginBottom: 1,
-    margin: 20,
-    paddingLeft: 2,
-    borderColor: 'lightgray',
-    borderWidth: 1,
-  },
-});

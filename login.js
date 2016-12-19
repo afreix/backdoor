@@ -1,4 +1,29 @@
-<View style={styles.container}>
+import React, { Component } from 'react';
+import { 
+  AppRegistry, 
+  Text,
+  StyleSheet,
+  View,
+  TextInput,
+  Button,
+  Alert,
+  Image,
+} from 'react-native';
+import { Actions, Router, Scene } from 'react-native-router-flux'
+
+import Home from './Home';
+
+export default class Login extends Component {
+  constructor() {
+    super();
+    this.state= {
+      username: '',
+      password: ''
+    }
+  }
+  render() {
+    return (
+      <View style={styles.container}>
         <Image source={require('./backdoor-logo.png')} />
         <Text style={styles.welcome}>
           backdoor
@@ -19,7 +44,7 @@
           autoCorrect = {false}
           onChangeText = {(text) => this.setState({password:text})}/>
         <Button
-          onPress={onLoginPress}
+          onPress={Actions.home}
           title="LOGIN"
           color='green'/>
         <Button
@@ -27,3 +52,39 @@
           title="Forgot?"
           color='orange'/>
         </View>
+      );
+  }
+}
+
+const onLoginPress = () => {
+  Alert.alert('yo');
+}
+
+const onHelpPress = () => {
+  Alert.alert('nothing to forget yet silly');
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  welcome: {
+    fontSize: 25,
+    textAlign: 'center',
+    marginTop: -10,
+    marginBottom: 50,
+    margin: 10,
+  },
+  textfield: {
+    height: 20,
+    backgroundColor: 'white',
+    marginTop: 1,
+    marginBottom: 1,
+    margin: 20,
+    paddingLeft: 2,
+    borderColor: 'lightgray',
+    borderWidth: 1,
+  },
+});
