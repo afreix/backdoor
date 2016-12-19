@@ -84,7 +84,8 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   textfield: {
-    height: 20,
+    // height: 20,
+    width: 200,
     backgroundColor: 'white',
     marginTop: 1,
     marginBottom: 1,

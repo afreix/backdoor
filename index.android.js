@@ -3,7 +3,7 @@ import {
   AppRegistry
 } from 'react-native';
 
-import backdoor from './main';
+import backdoor from './src/freix/spotify-tester';
 
 AppRegistry.registerComponent('backdoor', () => backdoor);
 
