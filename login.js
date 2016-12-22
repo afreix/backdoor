@@ -11,9 +11,9 @@ import {
 } from 'react-native';
 import { Actions, Router, Scene } from 'react-native-router-flux'
 
-import Home from './Home';
+import home from './home';
 
-export default class Login extends Component {
+export default class login extends Component {
   constructor() {
     super();
     this.state= {
