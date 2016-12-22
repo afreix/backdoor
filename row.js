@@ -1,12 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-import musicdata from './musicdata'
-
 const Row = (props) => (
 	<View style={styles.container}>
 		<Text style = {styles.text}>
-			{`${props.title} ${props.artist} ${props.album}`}
+			{`${props.title}`}
+		</Text>
+		<Text style = {styles.text}>
+			{`${props.artist}`}
+		</Text>
+		<Text style = {styles.text}>
+			{`${props.album}`}
 		</Text>
 	</View>
 	);
@@ -19,8 +23,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	text: {
-		marginLeft: 12,
-		fontSize: 16,
+		flex: 1,
+		marginLeft: 1,
+		fontSize: 12,
+		justifyContent: 'flex-start',
 	},
 	photo: {
 		height: 40,

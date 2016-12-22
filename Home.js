@@ -3,14 +3,13 @@ import { AppRegistry, View, Text, StyleSheet, ListView } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import Row from './row';
-import musicdata from './musicdata'
 
 export default class home extends Component {
 	constructor(props) {
 		super(props);
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.state = {
-			dataSource: ds.cloneWithRows([musicdata])
+			dataSource: ds.cloneWithRows(musicdata)
 		};
 	}
 
@@ -38,3 +37,31 @@ const styles = StyleSheet.create({
   	backgroundColor: 'black',
   },
 });
+
+const musicdata = [
+	{
+		"title" : "Neighbors",
+		"artist" : "J.Cole",
+		"album" : "4 Your Eyez Only"
+	},
+	{
+		"title" : "The Guide",
+		"artist" : "Kid Cudi",
+		"album" : "Passion, Pain, & Demon Slayin'"
+	},
+	{
+		"title" : "Foreplay",
+		"artist" : "Jalen Santoy",
+		"album" : "Foreplay"
+	},
+	{
+		"title" : "Best Me",
+		"artist" : "Sylvan LaCue",
+		"album" : "Best Me"
+	},
+	{
+		"title" : "Staying Alive",
+		"artist" : "070",
+		"album" : "The 070 Project: Chapter One"
+	},
+];
