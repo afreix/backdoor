@@ -4,7 +4,7 @@ import { Actions } from 'react-native-router-flux';
 
 import Row from './row';
 
-export default class home extends Component {
+export default class Home extends Component {
 	constructor(props) {
 		super(props);
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -16,18 +16,16 @@ export default class home extends Component {
 	render() {
 		return (
 				<ListView
-					contentContainerStyle = {styles.container} 
+					style={styles.container} 
 					dataSource = {this.state.dataSource}
 					renderRow={(data) => <Row {...data} />}
-					renderSeparator={(sectionId, rowId) => <View key={rowId} style = {styles.separator} />}
-				/>
+					renderSeparator={(sectionId, rowId) => <View key={rowId} style = {styles.separator} />} />
 		);
 	}
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     marginTop: 65,
     paddingLeft: 2,
   },

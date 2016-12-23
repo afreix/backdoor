@@ -19,9 +19,9 @@ import {
 } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux'
 
-import home from './home';
-import login from './login';
-import forgot from './forgot';
+import Home from './components/home';
+import Login from './components/login';
+import Forgot from './components/forgot';
 
 export default class backdoor extends Component {
   render() {
@@ -29,9 +29,9 @@ export default class backdoor extends Component {
     return (
       <Router>
         <Scene key = "root">
-          <Scene key='login' component={login} title="Login" initial = {true} />
-          <Scene key='home' component={home} title="Home" />
-          <Scene key='forgot' component={forgot} title="Help" />
+          <Scene key='login' component={Login} title="Login" initial = {true} />
+          <Scene key='home' component={Home} title="Home" />
+          <Scene key='forgot' component={Forgot} title="Help" />
         </Scene>
       </Router>
     );

@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Actions, Router, Scene } from 'react-native-router-flux'
 
-export default class login extends Component {
+export default class Login extends Component {
   constructor() {
     super();
     this.state= {
@@ -22,7 +22,7 @@ export default class login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={require('./backdoor-logo.png')} />
+        <Image source={require('../image/backdoor-logo.png')} />
         <Text style={styles.welcome}>
           backdoor
         </Text>
@@ -46,7 +46,7 @@ export default class login extends Component {
           title="LOGIN"
           color='green'/>
         <Button
-          onPress={onHelpPress}
+          onPress={Actions.forgot}
           title="Forgot?"
           color='orange'/>
         </View>
