@@ -1,24 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- * Edited by: Harrison Engoren
- * on my workflow
- */
-
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
+import { 
+  AppRegistry, 
   Text,
+  StyleSheet,
   View,
   TextInput,
   Button,
   Alert,
-  Image
+  Image,
 } from 'react-native';
+import { Actions, Router, Scene } from 'react-native-router-flux'
 
-export default class backdoor extends Component {
+export default class Login extends Component {
   constructor() {
     super();
     this.state= {
@@ -27,10 +20,9 @@ export default class backdoor extends Component {
     }
   }
   render() {
-    // Notice how I changed the spacing. Personally, I think it makes it more readable
     return (
       <View style={styles.container}>
-        <Image source={require('./backdoor-logo.png')} />
+        <Image source={require('../image/backdoor-logo.png')} />
         <Text style={styles.welcome}>
           backdoor
         </Text>
@@ -50,20 +42,20 @@ export default class backdoor extends Component {
           autoCorrect = {false}
           onChangeText = {(text) => this.setState({password:text})}/>
         <Button
-          onPress={onLoginPress}
+          onPress={Actions.home}
           title="LOGIN"
           color='green'/>
         <Button
-          onPress={onHelpPress}
+          onPress={Actions.forgot}
           title="Forgot?"
           color='orange'/>
-      </View>
-    );
+        </View>
+      );
   }
 }
 
 const onLoginPress = () => {
-  Alert.alert('you just entered my backdoor ;)');
+  Alert.alert('yo');
 }
 
 const onHelpPress = () => {
